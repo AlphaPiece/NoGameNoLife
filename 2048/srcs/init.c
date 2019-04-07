@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:41:43 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 12:01:18 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/07 13:12:18 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	game_loop(int board[EDGE][EDGE])
 {
 	char	chr;
 
-	while (!is_full(board))
+	while (!is_full(board) && !game_won(board))
 	{
 		random_pop(board);
 		board_status(board);

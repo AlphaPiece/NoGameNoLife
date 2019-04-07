@@ -6,28 +6,28 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 12:52:13 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 12:53:00 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/07 13:03:52 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "2048.h"
+#include "game_2048.h"
 
-void	move_up(void)
+void	move_up(int board[EDGE][EDGE])
 {
 
 }
 
-void	move_down(void)
+void	move_down(int board[EDGE][EDGE])
 {
 
 }
 
-void	move_left(void)
+void	move_left(int board[EDGE][EDGE])
 {
 
 }
 
-void	move_right(void)
+void	move_right(int board[EDGE][EDGE])
 {
 
 }
