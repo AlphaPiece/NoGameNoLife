@@ -6,7 +6,7 @@
 /*   By: zwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 11:20:28 by zwang             #+#    #+#             */
-/*   Updated: 2019/04/06 14:17:04 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/07 17:54:44 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,9 +143,9 @@ double				ft_floor(double n);
 t_fcompo			*ft_analyze_float(float n);
 int					*ft_numarrcpy(int *dst, const int *src, size_t len);
 t_bool				ft_iselem(size_t byte, void *arr, size_t len, void *num);
-long				ft_max(int total_num, ...);
-long				ft_min(int total_num, ...);
-long				ft_sum(int total_num, ...);
+int					ft_max(int total_no, ...);
+int					ft_min(int total_no, ...);
+int					ft_sum(int total_no, ...);
 int					ft_max_intarr(int arr[], size_t len);
 int					ft_min_intarr(int arr[], size_t	len);
 int					ft_sum_intarr(int arr[], size_t len);
@@ -153,6 +153,7 @@ int                 *ft_randintarr(int lower, int upper, int len);
 long long			ft_factorial(int n);
 long long			ft_fibonacci(int n);
 long long			ft_uglynum(int n);
+void				ft_swap(int *a, int *b);
 
 /*
 ** =======================

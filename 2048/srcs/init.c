@@ -6,11 +6,11 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:41:43 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 13:12:18 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/07 15:17:06 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "2048.h"
+#include "game_2048.h"
 
 void	game_loop(int board[EDGE][EDGE])
 {
@@ -26,16 +26,16 @@ void	game_loop(int board[EDGE][EDGE])
 		switch (chr)
 		{
 			case 'w':
-				move_up(borad);
+				move_up(board);
 				break ;
 			case 's':
-				move_down(borad);
+				move_down(board);
 				break ;
 			case 'a':
-				move_left(borad);
+				move_left(board);
 				break ;
 			case 'd':
-				move_right(borad);
+				move_right(board);
 				break ;
 		}
 	}

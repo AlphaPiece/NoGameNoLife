@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 12:01:55 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 13:14:10 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/07 18:01:58 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	random_pop(int board[EDGE][EDGE])
 		}
 		if (board[arr[i]][arr[j]] == 0)
 		{
-			board[arr[i]][arr[j]] = 2;
+			board[arr[i++]][arr[j++]] = 2;
 			break ;
 		}
 		i++;
@@ -71,16 +71,16 @@ void	random_pop(int board[EDGE][EDGE])
 void	board_status(int board[EDGE][EDGE])
 {
 	ft_putnchar('-', 21);
-	ft_printf("\n|%4d|%4d|%4d|%4d|\n",
+	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[0][0], board[0][1], board[0][2], board[0][3]);
 	ft_putnchar('-', 21);
-	ft_printf("\n|%4d|%4d|%4d|%4d|\n",
+	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[1][0], board[1][1], board[1][2], board[1][3]);
 	ft_putnchar('-', 21);
-	ft_printf("\n|%4d|%4d|%4d|%4d|\n",
+	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[2][0], board[2][1], board[2][2], board[2][3]);
 	ft_putnchar('-', 21);
-	ft_printf("\n|%4d|%4d|%4d|%4d|\n",
+	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[3][0], board[3][1], board[3][2], board[3][3]);
 	ft_putnchar('-', 21);
 	ft_putchar('\n');
