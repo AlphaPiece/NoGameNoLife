@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 22:30:07 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 23:40:51 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/08 09:58:59 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,34 +43,12 @@ t_bool	is_valid_place(char board[EDGE][EDGE], int r, int c)
 	return (r >= 0 && r < EDGE && c >= 0 && c < EDGE && board[r][c] == ' ');
 }
 
-void	next_place(char board[EDGE][EDGE], char player)
+void	next_place(char board[EDGE][EDGE], char player, char mode)
 {
-	char	*buf;
-	char	**coor;
-	int		r, c;
-
-	while (true)
-	{
-		ft_printf("Place (row, column):\n");
-		ft_nextline(0, &buf);
-		coor = ft_strsplit(buf, " \t\n,()");
-		if (ft_strarrlen((const char **)coor) < 2)
-		{
-			free(buf);
-			ft_strarrdel(coor);
-			continue ;
-		}
-		r = ft_atoi(coor[0]) - 1;
-		c = ft_atoi(coor[1]) - 1;
-		if (is_valid_place(board, r, c))
-		{	
-			free(buf);
-			ft_strarrdel(coor);
-			board[r][c] = player;
-			break ;
-		}
-	}
-	ft_putchar('\n');
+	if (mode == 'h')
+		human_mode(board, player);
+	else
+		computer_mode(board, player);
 }
 
 t_bool	player_won(char board[EDGE][EDGE], char player)
