@@ -6,7 +6,7 @@
 #    By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/07 12:53:24 by Zexi Wang         #+#    #+#              #
-#    Updated: 2019/04/07 23:07:22 by Zexi Wang        ###   ########.fr        #
+#    Updated: 2019/04/07 23:42:25 by Zexi Wang        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ LIBS = libs/libft/libft.a
 all: $(NAME)
 
 $(NAME):
-	$(CC) -o $(NAME) $(SRCS) $(INCS) $(LIBS)
+	@$(CC) -o $(NAME) $(SRCS) $(INCS) $(LIBS)
 
 fclean:
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
