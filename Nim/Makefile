@@ -6,14 +6,14 @@
 #    By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/07 12:53:24 by Zexi Wang         #+#    #+#              #
-#    Updated: 2019/04/08 16:52:42 by Zexi Wang        ###   ########.fr        #
+#    Updated: 2019/04/09 09:33:00 by Zexi Wang        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = nim
 CC = gcc 
 
-SRCS = srcs/init.c srcs/util.c
+SRCS = srcs/init.c srcs/util.c srcs/mode.c
 INCS = -I incs -I libs/libft/incs
 LIBS = libs/libft/libft.a
 
