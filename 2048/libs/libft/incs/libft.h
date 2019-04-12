@@ -6,7 +6,7 @@
 /*   By: zwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 11:20:28 by zwang             #+#    #+#             */
-/*   Updated: 2019/04/07 17:54:44 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/11 21:14:35 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "ft_nextline.h"
 # include "ft_vdprintf.h"
 # include "ft_bnt_to_bst.h"
-# include "libhmap.h"
 
 typedef enum		e_bool
 {
@@ -146,9 +145,9 @@ t_bool				ft_iselem(size_t byte, void *arr, size_t len, void *num);
 int					ft_max(int total_no, ...);
 int					ft_min(int total_no, ...);
 int					ft_sum(int total_no, ...);
-int					ft_max_intarr(int arr[], size_t len);
-int					ft_min_intarr(int arr[], size_t	len);
-int					ft_sum_intarr(int arr[], size_t len);
+int					ft_intarrmax(int arr[], int len);
+int					ft_intarrmin(int arr[], int	len);
+int					ft_intarrsum(int arr[], int len);
 int                 *ft_randintarr(int lower, int upper, int len);
 long long			ft_factorial(int n);
 long long			ft_fibonacci(int n);
@@ -383,5 +382,37 @@ typedef struct		s_rbtree
 	struct s_rbtree	*right;
 	enum e_rbcolor	color;
 }					t_rbtree;
+
+/*
+** ================
+** >              <
+** >>> HASH MAP <<<
+** >              <
+** ================
+*/
+
+# define HASH_SPACE 512
+
+typedef struct		s_pair
+{
+	char			*key;
+	char			*val;
+	struct s_pair	*next;
+}					t_pair;
+
+typedef struct		s_hmap
+{
+	int				count;
+	t_pair			**pairs;
+}					t_hmap;
+
+unsigned int		ft_hashstr(const char *s, unsigned int hashsize);
+t_hmap				*ft_hmapnew(void);
+t_pair				*ft_hmapsearch(t_hmap *hmap, char *key);
+void				ft_hmapset(t_hmap *hmap, char *key, char *value);
+char				*ft_hmapget(t_hmap *hmap, char *key);
+void				ft_hmapremove(t_hmap *hmap, char *key);
+void				ft_hmapclear(t_hmap *hmap);
+void				ft_hmapdel(t_hmap **hmap);
 
 #endif
