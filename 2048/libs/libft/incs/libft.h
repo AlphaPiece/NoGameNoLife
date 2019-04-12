@@ -6,7 +6,7 @@
 /*   By: zwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 11:20:28 by zwang             #+#    #+#             */
-/*   Updated: 2019/04/11 21:14:35 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/12 10:27:04 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <time.h>
 # include "ft_nextline.h"
 # include "ft_vdprintf.h"
-# include "ft_bnt_to_bst.h"
 
 typedef enum		e_bool
 {
@@ -265,11 +264,11 @@ int					ft_dprintf(int fd, const char *format, ...);
 int					ft_nextline(const int fd, char **line);
 
 /*
-** =========================
-** >                       <
-** >>> TREE: LINKED LIST <<<
-** >                       <
-** =========================
+** ===================
+** >                 <
+** >>> LINKED LIST <<<
+** >                 <
+** ===================
 */
 
 typedef struct		s_list
@@ -288,11 +287,11 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_swapppairs(t_list *head);
 
 /*
-** ==========================
-** >                        <
-** >>> TREE: GENERAL TREE <<<
-** >                        <
-** ==========================
+** ====================
+** >                  <
+** >>> GENERAL TREE <<<
+** >                  <
+** ====================
 */
 
 typedef struct		s_tree
@@ -310,11 +309,11 @@ int					ft_gntnodecount(t_tree *gnt);
 int					ft_gntarity(t_tree *gnt);
 
 /*
-** =========================
-** >                       <
-** >>> TREE: BINARY TREE <<<
-** >                       <
-** =========================
+** ===================
+** >                 <
+** >>> BINARY TREE <<<
+** >                 <
+** ===================
 */
 
 typedef struct		s_btree
@@ -328,11 +327,6 @@ typedef struct		s_btree
 t_btree				*ft_bntnew(void *data);
 void				ft_bntview(t_btree *bt, char type);
 void				ft_bntdel(t_btree **node);
-
-/*
-** DEPTH FIRST SEARCH
-*/
-
 void				ft_bntiter_in(t_btree *node, void (*f)(void *));
 void				ft_bntiter_pre(t_btree *node, void (*f)(void *));
 void				ft_bntiter_post(t_btree *node, void (*f)(void *));
@@ -341,11 +335,11 @@ void				ft_bntalter_pre(t_btree *node, void *(*f)(void *));
 void				ft_bntalter_post(t_btree *node, void *(*f)(void *));
 
 /*
-** =============================================
-** >                                           <
-** >>> TREE: BINARY TREE: BINARY SEARCH TREE <<<
-** >                                           <
-** =============================================
+** ==========================
+** >                        <
+** >>> BINARY SEARCH TREE <<<
+** >                        <
+** ==========================
 */
 
 t_bool				ft_isbst(t_btree *bt, char *data_type);
@@ -361,11 +355,11 @@ void				*ft_bstsearch(t_btree *bst, void *data_ref,
 									int (*cmp)(void *, void *));
 
 /*
-** =============================================================
-** >                                                           <
-** >>> TREE: BINARY TREE: BINARY SEARCH TREE: RED BLACK TREE <<<
-** >                                                           <
-** =============================================================
+** ======================
+** >                    <
+** >>> RED BLACK TREE <<<
+** >                    <
+** ======================
 */
 
 enum				e_rbcolor
@@ -382,6 +376,22 @@ typedef struct		s_rbtree
 	struct s_rbtree	*right;
 	enum e_rbcolor	color;
 }					t_rbtree;
+
+void				ft_rbtinsert(t_rbtree **root, void *data,
+									int (*cmp)(void *, void *));
+t_rbtree			*ft_rbtsearch(t_rbtree *root, void *data,
+									int (*cmp)(void *, void *));
+void				ft_rbtremove(t_rbtree **root, void *data,
+									int (*cmp)(void *, void *));
+
+/*
+** ================
+** >              <
+** >>> AVL TREE <<<
+** >              <
+** ================
+*/
+
 
 /*
 ** ================
@@ -414,5 +424,15 @@ char				*ft_hmapget(t_hmap *hmap, char *key);
 void				ft_hmapremove(t_hmap *hmap, char *key);
 void				ft_hmapclear(t_hmap *hmap);
 void				ft_hmapdel(t_hmap **hmap);
+
+/*
+** =============
+** >           <
+** >>> GRAPH <<<
+** >           <
+** =============
+*/
+
+
 
 #endif

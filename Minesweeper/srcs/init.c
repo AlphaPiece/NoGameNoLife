@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 11:36:25 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/09 19:27:48 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/12 10:49:58 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	set_board(t_info *info)
 	{
 		ft_printf("Difficulty level (0/1/2): ");
 		chr = ft_getonechar();
-	} while (chr < '0' && chr > '2');
+	} while (chr < '0' || chr > '2');
 	switch (chr)
 	{
 		case '0':
@@ -82,7 +82,7 @@ void	game_loop(t_info *info)
 	if (info->is_dead)
 		ft_printf("\nYou died.\n");
 	else
-		ft_printf("\nYou survived.\n");
+		ft_printf("\nYou survived!\n");
 	ft_printf("Game over.\n");
 }
 

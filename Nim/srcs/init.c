@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 13:21:55 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/09 11:25:45 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/12 10:51:57 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	prepare_note(t_note *note)
 	note->min_pick = 1;
 	note->max_pick = 3;
 	stones_no = 30;
-	note->piles = ft_randintarr(1, stones_no / piles_no, piles_no);
+	note->piles = ft_randintarr(6 - piles_no, stones_no / piles_no, piles_no);
 	if (piles_no == 1)
 	{
 		do
