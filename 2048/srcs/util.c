@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 12:01:55 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 18:01:58 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/05/10 17:18:44 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,38 +38,23 @@ t_bool	game_won(int board[EDGE][EDGE])
 
 void	random_pop(int board[EDGE][EDGE])
 {
-	static int	*arr = NULL;
-	static int	len = EDGE * 100;
-	static int	i;
-	static int	j;
+	int	i, j;
 
-	if (!arr)
-	{
-		arr = ft_randintarr(0, EDGE - 1, len);
-		i = 0;
-		j = len / 2;
-	}
 	while (true)
 	{
-		if (i == len / 2 || j == len)
+		i = ft_randint(0, EDGE - 1);
+		j = ft_randint(0, EDGE - 1);
+		if (board[i][j] == 0)
 		{
-			free(arr);
-			arr = ft_randintarr(0, EDGE - 1, len);
-			i = 0;
-			j = len / 2;
-		}
-		if (board[arr[i]][arr[j]] == 0)
-		{
-			board[arr[i++]][arr[j++]] = 2;
+			board[i][j] = 2;
 			break ;
 		}
-		i++;
-		j++;
 	}
 }
 
 void	board_status(int board[EDGE][EDGE])
 {
+	ft_printf("\n");
 	ft_putnchar('-', 21);
 	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[0][0], board[0][1], board[0][2], board[0][3]);
@@ -83,6 +68,6 @@ void	board_status(int board[EDGE][EDGE])
 	ft_printf("\n|%4.d|%4.d|%4.d|%4.d|\n",
 				board[3][0], board[3][1], board[3][2], board[3][3]);
 	ft_putnchar('-', 21);
-	ft_putchar('\n');
+	ft_printf("\n\n");
 }
 

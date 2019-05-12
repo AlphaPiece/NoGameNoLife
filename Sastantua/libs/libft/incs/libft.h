@@ -6,7 +6,7 @@
 /*   By: zwang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 11:20:28 by zwang             #+#    #+#             */
-/*   Updated: 2019/04/12 10:56:03 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/05/12 11:33:48 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ unsigned int		ft_invertbits(unsigned int x, int p, int n);
 void				ft_memswap(void *p1, void *p2, size_t byte);
 void				*ft_memrealloc(void **ptr, size_t oldsize, size_t newsize);
 void				ft_putbits(void *x, size_t bit);
+uint32_t			ft_hash_ptr(void *p);
 
 /*
 ** ==============
@@ -108,7 +109,9 @@ void				ft_putbits(void *x, size_t bit);
 
 # define F_PREC	15	
 
-# define ABS(x)	(((x) < 0) ? -(x) : (x))
+# define ABS(x)		(((x) < 0) ? -(x) : (x))
+# define MAX(a,b)	(((a) > (b)) ? (a) : (b))
+# define MIN(a,b)	(((a) < (b)) ? (a) : (b))
 
 /*
 ** t_fcompo:	contains all the parts of a single float type data
@@ -147,11 +150,14 @@ int					ft_sum(int total_no, ...);
 int					ft_intarrmax(int arr[], int len);
 int					ft_intarrmin(int arr[], int	len);
 int					ft_intarrsum(int arr[], int len);
-int                 *ft_randintarr(int lower, int upper, int len);
+int                 ft_randint(int lower, int upper);
+int					*ft_randintarr(int lower, int upper, int len);
 long long			ft_factorial(int n);
 long long			ft_fibonacci(int n);
 long long			ft_uglynum(int n);
 void				ft_swap(int *a, int *b);
+uint32_t			ft_hash_int(int h);
+int					ft_log(int n, int base);
 
 /*
 ** =======================
@@ -227,6 +233,7 @@ void				ft_strsqueeze(char str[], int c);
 void				ft_strarrsort(char *arr[], int len,
 									int (*cmp)(const char *, const char *));
 char				*ft_strcompose(int str_num, ...);
+uint32_t			ft_hash_str(char *s);
 
 /*
 ** =========================

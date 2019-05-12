@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:41:43 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/04/07 15:17:06 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/05/10 17:26:59 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,20 @@ void	game_loop(int board[EDGE][EDGE])
 {
 	char	chr;
 
+	ft_printf("Game starts!\n");
 	while (!is_full(board) && !game_won(board))
 	{
 		random_pop(board);
 		board_status(board);
-		chr = ft_getchar();
-		while (chr != 'w' && chr != 's' && chr != 'a' && chr != 'd')
-			chr = ft_getchar();
+		ft_printf("w: move up\ns: down\na: left\nd: right\nq: quit\n\n");
+		do
+		{
+			ft_printf("Enter: ");
+			chr = ft_getonechar();
+		} while (chr != 'w' && chr != 's' && chr != 'a' && chr != 'd' &&
+					chr != 'q');
+		if (chr == 'q')
+			break ;
 		switch (chr)
 		{
 			case 'w':
@@ -39,7 +46,7 @@ void	game_loop(int board[EDGE][EDGE])
 				break ;
 		}
 	}
-	board_status(board);
+	ft_printf("\nGame over.\n");	
 }
 
 int		main(void)
