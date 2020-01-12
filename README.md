@@ -1,6 +1,6 @@
-# NoGameNoLife
+# No Game No Life
 
-## *Let's embrace the greatest human nature!*
+## *"We’re a playful species," says primatologist Frans de Waal.*
 
 - ### Sastantua
 *A displayer of any pyramid of Sastantua.*
