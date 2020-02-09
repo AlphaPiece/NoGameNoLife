@@ -2,7 +2,7 @@
 
 ## *"We’re a playful species," says primatologist Frans de Waal.*
 
-![Intro Image](https://user-images.githubusercontent.com/30487160/72772894-47628a80-3bd3-11ea-8bab-34975a6cd3e7.jpg)
+![Intro Image](https://user-images.githubusercontent.com/30487160/74094776-aa4d9000-4ab4-11ea-9617-fee5a293dc7f.jpg)
 
 - ### Sastantua
 *A displayer of any pyramid of Sastantua.*
