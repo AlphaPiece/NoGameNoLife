@@ -4,6 +4,10 @@
 
 ![Intro Image](https://user-images.githubusercontent.com/30487160/74094776-aa4d9000-4ab4-11ea-9617-fee5a293dc7f.jpg)
 
+Games are important to human beings. Why? Becuase we can get a sense of accomplishment in games.
+
+---
+
 - ### Sastantua
 *A displayer of any pyramid of Sastantua.*
 
